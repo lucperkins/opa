@@ -1,2 +1,3 @@
-_book
-_site
+# Hugo-generated assets
+public/
+resources/
