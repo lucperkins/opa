@@ -1,8 +1,24 @@
-{{ $root := site.BaseURL }}
+{{ $home := site.BaseURL }}
+{{ $logo := site.Params.logos.navbar }}
+{{ $menu := site.Menus.main }}
 <nav class="navbar is-fixed-top is-black">
   <div class="navbar-brand">
-    <a class="navbar-item" url="{{ $root }}">
-      Home
+    <a class="navbar-item" url="{{ $home }}">
+      <img src="{{ $logo }}">
     </a>
+
+    <span class="navbar-item">
+      {{ .Title }}
+    </span>
+  </div>
+
+  <div class="navbar-menu">
+    <div class="navbar-end">
+      {{ range $menu }}
+      <a class="navbar-item" href="{{ .URL }}">
+        {{ .Name }}
+      </a>
+      {{ end }}
+    </div>
   </div>
 </nav>

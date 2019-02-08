@@ -1,13 +1,3 @@
 {{ define "main" }}
-<div class="dashboard">
-  <div class="dashboard-panel left is-scrollable">
-    <p>
-      LEFT PANEL
-    </p>
-  </div>
-
-  <div class="dashboard-main has-background-danger is-scrollable">
-    {{ partial "docs/navbar.html" . }}
-  </div>
-</div>
+{{ partial "docs/dashboard.html" . }}
 {{ end }}

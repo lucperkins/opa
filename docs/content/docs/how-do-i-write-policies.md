@@ -1,4 +1,7 @@
-# How Do I Write Policies?
+---
+title: How Do I Write Policies?
+weight: 2
+---
 
 OPA is purpose built for reasoning about information represented in structured
 documents. The data that your service and its users publish can be inspected and

@@ -1,4 +1,7 @@
-# How Does OPA Work?
+---
+title: How Does OPA Work?
+weight: 1
+---
 
 OPA is a full-featured policy engine that offloads policy decisions from your service. You can think of it as a concierge for your service who can answer detailed questions on behalf of your users to meet their specific needs.
 
@@ -12,7 +15,7 @@ OPA’s RESTful APIs use JSON over HTTP so you and your users can integrate OPA 
 
 When your service is integrated with OPA, your users will be able author and deploy custom policies that control the behavior of your service’s policy-enabled features. Furthermore, users can publish data to OPA that is not available to your service about their own deployment context.
 
-![request response](images/request-response.svg "request response")
+![request response](/img/request-response.svg "request response")
 
 In the future, both your service and its users will be able to register for, and react to, notifications triggered when OPA detects a policy-relevant change.
 
@@ -26,7 +29,7 @@ When OPA starts for the first time, it will not contain any policies or data. Po
 
 The primary unit of data in OPA is a document, which is similar to a JSON value. Documents typically correspond to single, self-contained objects and are capable of representing both primitive types (strings, numbers, booleans, and null) as well as structured types (objects, and arrays). Documents are created, read, updated, and deleted via OPA’s RESTful HTTP APIs.
 
-![data model dependencies](images/data-model-dependencies.svg "data model dependencies")
+![data model dependencies](/img/data-model-dependencies.svg "data model dependencies")
 
 ### Base Documents
 
@@ -149,7 +152,7 @@ In contrast to base documents, virtual documents embody the results of evaluatin
 
 All documents pushed into OPA or computed by rules are nested under a built-in root document named data.
 
-![data model logical](images/data-model-logical.svg "data model logical")
+![data model logical](/img/data-model-logical.svg "data model logical")
 
 Example `data` document:
 

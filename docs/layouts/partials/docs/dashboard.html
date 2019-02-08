@@ -1,0 +1,52 @@
+{{ $home       := site.BaseURL }}
+{{ $docsHome   := .CurrentSection }}
+{{ $docs       := where site.RegularPages "Section" "docs" }}
+{{ $logo       := site.Params.logos.sidebar | relURL }}
+{{ $pageUrl    := .URL }}
+{{ $isDocsHome := eq .URL $docsHome.URL }}
+<div class="dashboard">
+  <div class="dashboard-panel left is-scrollable has-background-white-bis">
+    <div class="dashboard-panel-header is-centered">
+      <a class="dashboard-panel-logo" href="{{ $home }}">
+        <img src="{{ $logo }}">
+      </a>
+    </div>
+
+    <div class="dashboard-panel-content">
+      <div class="docs-nav">
+        <span class="docs-nav-title">
+          Documentation
+        </span>
+
+        <a class="docs-nav-item{{ if $isDocsHome }} is-active{{ end }}" href="{{ $docsHome.URL }}">
+          {{ $docsHome.Name }}
+        </a>
+
+        {{ range $docs }}
+        {{ $isThisPage := eq .URL $pageUrl }}
+        <a class="docs-nav-item{{ if $isThisPage }} is-active{{ end }}" href="{{ .URL }}">
+          {{ .Title }}
+        </a>
+        {{ end }}
+
+        <hr class="docs-nav-hr" />
+
+        <span class="docs-nav-title">
+          Tutorials
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-main is-scrollable">
+    {{ partial "docs/navbar.html" . }}
+    {{ partial "docs/hero.html" . }}
+    {{ partial "docs/article.html" . }}
+  </div>
+
+  <div class="dashboard-panel is-small has-background-white-bis">
+    <div class="toc">
+      {{ .TableOfContents }}
+    </div>
+  </div>
+</div>

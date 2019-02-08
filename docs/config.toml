@@ -8,6 +8,10 @@ googleAnalytics = "UA-84550302-1"
 description = "Policy-based control for cloud native environments"
 tagline = "Empower your administrators with flexible, fine-grained control across your entire stack."
 
+[params.logos]
+sidebar = "/img/logos/opa-stacked-color.png"
+navbar = "/img/logos/opa-icon-white.png"
+
 [[params.home.buttons]]
 url = "/docs/get-started"
 title = "Get started"

@@ -1,7 +1,10 @@
-# How Do I Test Policies?
+---
+title: How Do I Test Policies?
+weight: 3
+---
 
 OPA gives you a high-level declarative language
-([Rego](how-do-i-write-policies.md)) to author fine-grained policies that
+([Rego](how-do-i-write-policies)) to author fine-grained policies that
 codify important requirements in your system.
 
 To help you verify the correctness of your policies, OPA also gives you a

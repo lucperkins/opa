@@ -1,4 +1,7 @@
-# Introduction
+---
+title: Introduction
+weight: 1
+---
 
 A policy is a set of rules that governs the behavior of a service.
 Policy-enablement empowers users to read, write, and manage these rules without
