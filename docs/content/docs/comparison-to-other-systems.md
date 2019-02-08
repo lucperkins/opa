@@ -1,4 +1,7 @@
-# Comparison to Other Systems
+---
+title: Comparison to Other Systems
+weight: 15
+---
 
 Often the easiest way to understand a new language is by comparing
 it to languages you already know.  Here we show how policies from

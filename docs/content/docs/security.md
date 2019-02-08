@@ -1,4 +1,7 @@
-# Security
+---
+title: Security
+weight: 13
+---
 
 This document provides guidelines for deploying OPA inside untrusted
 environments. You should read this document if you are deploying OPA as a

@@ -1,4 +1,7 @@
-# Monitoring
+---
+title: Monitoring
+weight: 11
+---
 
 ## Prometheus
 

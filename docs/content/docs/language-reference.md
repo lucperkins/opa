@@ -1,4 +1,7 @@
-# Language Reference
+---
+title: Language Reference
+weight: 4
+---
 
 This document is the authoritative specification of the Rego policy language
 (V1). All policies in OPA are written in Rego.

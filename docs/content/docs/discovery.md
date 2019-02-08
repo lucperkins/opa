@@ -1,4 +1,7 @@
-# Discovery
+---
+title: Discovery
+weight: 12
+---
 
 OPA can be configured to download bundles of policy and data, report status, and
 upload decision logs to remote endpoints. The discovery feature helps you

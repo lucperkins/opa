@@ -1,4 +1,7 @@
-# Status
+---
+title: Status
+weight: 9
+---
 
 OPA can periodically report status updates to remote HTTP servers. The
 updates contain status information for OPA itself as well as the

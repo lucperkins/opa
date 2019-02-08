@@ -1,4 +1,7 @@
-# REST API
+---
+title: REST API
+weight: 6
+---
 
 This document is the authoritative specification of the OPA REST API.
 

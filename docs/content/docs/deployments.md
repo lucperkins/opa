@@ -1,4 +1,7 @@
-# Deployments
+---
+title: Deployments
+weight: 7
+---
 
 This document helps you get OPA up and running in different deployment
 environments. You should read this document if you are planning to deploy OPA.

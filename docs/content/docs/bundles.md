@@ -1,4 +1,7 @@
-# Bundles
+---
+title: Bundles
+weight: 8
+---
 
 OPA can periodically download bundles of policy and data from remote HTTP
 servers. The policies and data are loaded on the fly without requiring a

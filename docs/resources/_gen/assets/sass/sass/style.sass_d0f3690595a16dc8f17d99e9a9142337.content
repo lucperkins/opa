@@ -320,8 +320,8 @@ a {
     color: #363636; }
 
 code {
-  background-color: whitesmoke;
-  color: #ff3860;
+  background-color: #fafafa;
+  color: #008d9c;
   font-size: 0.875em;
   font-weight: normal;
   padding: 0.25em 0.5em 0.25em; }
@@ -7002,7 +7002,7 @@ label.panel-block {
     color: #008d9c; }
 
 .docs-nav-item + .docs-nav-item {
-  margin-top: .75rem; }
+  margin-top: .8rem; }
 
 .docs-nav-hr {
   background-color: #7d9199;

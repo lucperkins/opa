@@ -1,4 +1,7 @@
-# Decision Logs
+---
+title: Decision Logs
+weight: 10
+---
 
 OPA can periodically report decision logs to remote HTTP servers. The decision
 logs contain events that describe policy queries. Each event includes the policy

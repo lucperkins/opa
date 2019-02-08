@@ -1,4 +1,7 @@
-# Configuration Reference
+---
+title: Configuration Reference
+weight: 5
+---
 
 This page defines the format of OPA configuration files. Fields marked as
 required must be specified if the parent is defined. For example, when the

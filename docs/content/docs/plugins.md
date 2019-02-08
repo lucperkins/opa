@@ -1,4 +1,7 @@
-# Plugins (Experimental)
+---
+title: Plugins (Experimental)
+weight: 14
+---
 
 OPA can be extended with custom built-in functions and plugins that
 implement functionality like support for new protocols.
@@ -16,7 +19,7 @@ At minimum, your Go plugin must implement the following:
 package main
 
 func Init() error {
-	 // your init function
+    // your init function
 }
 ```
 
