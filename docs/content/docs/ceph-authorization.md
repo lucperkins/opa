@@ -1,4 +1,8 @@
-# Ceph Authorization
+---
+title: Ceph Authorization
+tutorial: true
+weight: 8
+---
 
 Ceph is a highly scalable distributed storage solution that uniquely delivers object, block, and file storage in one unified system. You can enforce fine-grained authorization over Ceph's Object Storage using OPA. Ceph's Object Storage essentially consists of a [Ceph Storage Cluster](http://docs.ceph.com/docs/nautilus/rados/#) and a [Ceph Object Gateway](http://docs.ceph.com/docs/nautilus/radosgw/).
 
@@ -1015,7 +1019,7 @@ In the above policy, `Bob's` location is `USA` while `Alice's` is `UK`. Since th
 
 ### 9. Create the S3 access test script
 
-The below Python S3 access test script connects to the  `Ceph Object Store Gateway` to perform actions such as creating and deleting buckets. 
+The below Python S3 access test script connects to the  `Ceph Object Store Gateway` to perform actions such as creating and deleting buckets.
 
 > You will need to install the `python-boto` package to run the test script.
 
@@ -1167,7 +1171,7 @@ Now let's create a bucket and add some data to it.
     ```
 
 * Add some data to the bucket `supersecretbucket`
-  
+
     ```bash
     python s3test.py Bob upload_data supersecretbucket "This is some secret data"
     ```

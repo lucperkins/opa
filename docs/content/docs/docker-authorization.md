@@ -1,4 +1,8 @@
-# Docker Authorization
+---
+title: Docker Authorization
+tutorial: true
+weight: 2
+---
 
 Docker’s out-of-the-box authorization model is all or nothing. But many users
 require finer-grained access control and Docker’s plugin infrastructure allows

@@ -1,4 +1,8 @@
-# SSH and sudo Authorization
+---
+title: SSH and sudo Authorization
+tutorial: true
+weight: 4
+---
 
 Host-level access controls are an important part of every organization's
 security strategy. Using [Linux-PAM](http://tldp.org/HOWTO/User-Authentication-HOWTO/x115.html) and OPA

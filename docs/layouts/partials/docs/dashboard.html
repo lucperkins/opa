@@ -1,6 +1,8 @@
 {{ $home       := site.BaseURL }}
 {{ $docsHome   := .CurrentSection }}
-{{ $docs       := where site.RegularPages "Section" "docs" }}
+{{ $allDocs    := where site.RegularPages "Section" "docs" }}
+{{ $docs       := where $allDocs ".Params.tutorial" "ne" true }}
+{{ $tutorials  := where $allDocs ".Params.tutorial" true }}
 {{ $logo       := site.Params.logos.sidebar | relURL }}
 {{ $pageUrl    := .URL }}
 {{ $isDocsHome := eq .URL $docsHome.URL }}
@@ -34,6 +36,13 @@
         <span class="docs-nav-title">
           Tutorials
         </span>
+
+        {{ range $tutorials }}
+        {{ $isThisPage := eq .URL $pageUrl }}
+        <a class="docs-nav-item{{ if $isThisPage }} is-active{{ end }}" href="{{ .URL }}">
+          {{ .Title }}
+        </a>
+        {{ end }}
       </div>
     </div>
   </div>

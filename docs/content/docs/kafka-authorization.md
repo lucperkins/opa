@@ -1,4 +1,8 @@
-# Kafka Authorization
+---
+title: Kafka Authorization
+tutorial: true
+weight: 5
+---
 
 [Apache Kafka](https://kafka.apache.org/) is a high-performance distributed
 streaming platform deployed by thousands of companies. In many deployments,

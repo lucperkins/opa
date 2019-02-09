@@ -1,4 +1,8 @@
-# Kubernetes Admission Control
+---
+title: Kubernetes Admission Control
+tutorial: true
+weight: 6
+---
 
 In Kubernetes, [Admission Controllers](https://kubernetes.io/docs/admin/admission-controllers/) enforce semantic validation of objects during create, update, and delete operations. With OPA you can enforce custom policies on Kubernetes objects without recompiling or reconfiguring the Kubernetes API server.
 

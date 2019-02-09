@@ -1,4 +1,8 @@
-# Terraform Testing
+---
+title: Terraform Testing
+tutorial: true
+weight: 7
+---
 
 Terraform lets you describe the infrastructure you want and automatically creates, deletes, and modifies
 your existing infrastructure to match.  OPA makes it possible to write policies that test the changes
