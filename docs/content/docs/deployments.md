@@ -16,7 +16,7 @@ recommend you review this section to familiarize yourself with the basics.
 
 OPA releases are available as images on Docker Hub.
 
-* [openpolicyagent/opa:0.10.3](https://hub.docker.com/r/openpolicyagent/opa/)
+* [openpolicyagent/opa:{{< latest >}}](https://hub.docker.com/r/openpolicyagent/opa/)
 
 ### Running with Docker
 

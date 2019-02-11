@@ -11,6 +11,9 @@ tagline = "Empower your administrators with flexible, fine-grained control acros
 [params.social]
 twitter = "OpenPolicyAgent"
 
+[params.versions]
+latest = "0.10.3"
+
 [params.logos]
 sidebar = "/img/logos/opa-stacked-color.png"
 navbar = "/img/logos/opa-icon-white.png"
