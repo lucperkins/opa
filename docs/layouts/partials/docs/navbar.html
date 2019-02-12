@@ -1,6 +1,9 @@
-{{ $home := site.BaseURL }}
-{{ $logo := site.Params.logos.navbar }}
-{{ $menu := site.Menus.main }}
+{{ $home    := site.BaseURL }}
+{{ $logo    := site.Params.logos.navbar }}
+{{ $social  := site.Params.social }}
+{{ $twitter := printf "https://twitter.com/%s" $social.twitter }}
+{{ $medium  := $social.medium }}
+{{ $slack   := $social.slack }}
 <nav class="navbar is-fixed-top is-black">
   <div class="navbar-brand">
     <a class="navbar-item" url="{{ $home }}">
@@ -14,11 +17,23 @@
 
   <div class="navbar-menu">
     <div class="navbar-end">
-      {{ range $menu }}
-      <a class="navbar-item" href="{{ .URL }}">
-        {{ .Name }}
+      <a class="navbar-item" href="{{ $twitter }}" target="_blank">
+        <span class="icon has-text-white-bis">
+          <i class="fab fa-twitter"></i>
+        </span>
       </a>
-      {{ end }}
+
+      <a class="navbar-item" href="{{ $medium }}" target="_blank">
+        <span class="icon has-text-white-bis">
+          <i class="fab fa-medium"></i>
+        </span>
+      </a>
+
+      <a class="navbar-item" href="{{ $slack }}" target="_blank">
+        <span class="icon has-text-white-bis">
+          <i class="fab fa-slack"></i>
+        </span>
+      </a>
     </div>
   </div>
 </nav>

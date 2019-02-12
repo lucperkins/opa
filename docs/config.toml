@@ -10,6 +10,7 @@ tagline = "Empower your administrators with flexible, fine-grained control acros
 
 [params.social]
 twitter = "OpenPolicyAgent"
+medium = "https://blog.openpolicyagent.org/"
 
 [params.versions]
 latest = "0.10.3"
