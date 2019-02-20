@@ -1,7 +1,7 @@
 {
   "private": true,
   "devDependencies": {
-    "bulma": "^0.7.4",
-    "bulma-dashboard": "^0.1.36"
+    "bulma": "0.7.4",
+    "bulma-dashboard": "0.1.37"
   }
 }
