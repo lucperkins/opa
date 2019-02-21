@@ -86,11 +86,13 @@ provide files via volume mounts.
 docker run -v $PWD:/example openpolicyagent/opa eval --data /example 'data.example.greeting'
 ```
 
-**$PWD/example/[data.json](https://github.com/open-policy-agent/opa/docs/book/tutorials/deployments-docker/example/data.json)**:
-<pre><code class="lang-yaml">{% include "./tutorials/deployments-docker/example/data.json" %}</code></pre>
+#### <code>$PWD/example/[data.json](https://github.com/open-policy-agent/opa/docs/book/tutorials/deployments-docker/example/data.json)</code>
 
-**$PWD/example/[policy.rego](https://github.com/open-policy-agent/opa/docs/book/tutorials/deployments-docker/example/policy.rego)**:
-<pre><code class="lang-ruby">{% include "./tutorials/deployments-docker/example/policy.rego" %}</code></pre>
+{{< code file="deployments-docker/example/data.json" lang="json" >}}
+
+#### <code>$PWD/example/[policy.rego](https://github.com/open-policy-agent/opa/docs/book/tutorials/deployments-docker/example/policy.rego)</code>
+
+{{< code file="deployments-docker/example/policy.rego" lang="ruby" >}}
 
 #### More Information
 
@@ -140,8 +142,10 @@ In this case, the policy file does not contain sensitive information so it's
 fine to store as a ConfigMap. If the file contained sensitive information, then
 we recommend you store it as a Secret.
 
-**[example.rego](https://github.com/open-policy-agent/opa/docs/book/tutorials/deployments-kubernetes/example.rego)**
-<pre><code class="lang-ruby">{% include "./tutorials/deployments-kubernetes/example.rego" %}</code></pre>
+#### [`example.rego`](https://github.com/open-policy-agent/opa/docs/book/tutorials/deployments-kubernetes/example.rego)
+
+{{< code file="deployments-kubernetes/example.rego" lang="ruby" >}}
+
 
 ```bash
 kubectl create configmap example-policy --from-file example.rego
@@ -151,8 +155,9 @@ Next, create a Deployment to run OPA. The ConfigMap containing the policy is
 volume mounted into the container. This allows OPA to load the policy from
 the file system.
 
-**[deployment-opa.yaml](https://github.com/open-policy-agent/opa/docs/book/tutorials/deployments-kubernetes/deployment-opa.yaml)**
-<pre><code class="lang-yaml">{% include "./tutorials/deployments-kubernetes/deployment-opa.yaml" %}</code></pre>
+#### [`deployment-opa.yaml`](https://github.com/open-policy-agent/opa/docs/book/tutorials/deployments-kubernetes/deployment-opa.yaml)
+
+{{< code file="deployments-kubernetes/deployment-opa.yaml" lang="yaml" >}}
 
 ```bash
 kubectl create -f deployment-opa.yaml
@@ -161,8 +166,9 @@ kubectl create -f deployment-opa.yaml
 At this point OPA is up and running. Create a Service to expose the OPA API so
 that you can query it:
 
-**[service-opa.yaml](https://github.com/open-policy-agent/opa/docs/book/tutorials/deployments-kubernetes/service-opa.yaml)**
-<pre><code class="lang-yaml">{% include "./tutorials/deployments-kubernetes/service-opa.yaml" %}</code></pre>
+#### [`service-opa.yaml`](https://github.com/open-policy-agent/opa/docs/book/tutorials/deployments-kubernetes/service-opa.yaml)
+
+{{< code file="deployments-kubernetes/service-opa.yaml" lang="yaml" >}}
 
 
 ```bash
@@ -178,8 +184,9 @@ OPA_URL=$(minikube service opa --url)
 Now you can query OPA's API. If you use the Pod below, `deny` will be `true`
 because the Pod refers to image outside the corporate registry.
 
-**[example-pod.json](https://github.com/open-policy-agent/opa/docs/book/tutorials/deployments-kubernetes/example-pod.json)**
-<pre><code class="lang-json">{% include "./tutorials/deployments-kubernetes/example-pod.json" %}</code></pre>
+#### [`example-pod.json`](https://github.com/open-policy-agent/opa/docs/book/tutorials/deployments-kubernetes/example-pod.json)
+
+{{< code file="deployments-kubernetes/example-pod.json" lang="json" >}}
 
 ```bash
 curl $OPA_URL/v1/data -d @example-pod.json

@@ -90,8 +90,9 @@ kubectl create secret tls opa-server --cert=server.crt --key=server.key
 
 Next, use the file below to deploy OPA as an admission controller.
 
-**[admission-controller.yaml](https://github.com/open-policy-agent/opa/blob/master/docs/book/tutorials/kubernetes-admission-control-validation/admission-controller.yaml)**:
-<pre><code class="lang-yaml">{% include "./tutorials/kubernetes-admission-control-validation/admission-controller.yaml" %}</code></pre>
+#### [`admission-controller.yaml`](https://github.com/open-policy-agent/opa/blob/master/docs/book/tutorials/kubernetes-admission-control-validation/admission-controller.yaml)
+
+{{< code file="kubernetes-admission-control-validation/admission-controller.yaml" lang="yaml" >}}
 
 ```bash
 kubectl apply -f admission-controller.yaml
@@ -140,7 +141,7 @@ kubectl logs -l app=opa -c opa
 
 To test admission control, create a policy that restricts the hostnames that an ingress can use ([ingress-whitelist.rego](https://github.com/open-policy-agent/opa/blob/master/docs/book/tutorials/kubernetes-admission-control-validation/ingress-whitelist.rego)):
 
-<pre><code class="lang-ruby">{% include "./tutorials/kubernetes-admission-control-validation/ingress-whitelist.rego" %}</code></pre>
+{{< code file="kubernetes-admission-control-validation/ingress-whitelist.rego" lang="ruby" >}}
 
 Store the policy in Kubernetes as a ConfigMap. By default kube-mgmt will try to load policies out of configmaps in the opa namespace OR configmaps in other namespaces labelled openpolicyagent.org/policy=rego.
 
@@ -235,7 +236,7 @@ To enforce the second half of the policy from the start of this tutorial you can
 
 [ingress-conflicts.rego](https://github.com/open-policy-agent/opa/blob/master/docs/book/tutorials/kubernetes-admission-control-validation/ingress-conflicts.rego):
 
-<pre><code class="lang-ruby">{% include "./tutorials/kubernetes-admission-control-validation/ingress-conflicts.rego" %}</code></pre>
+{{< code file="kubernetes-admission-control-validation/ingress-conflicts.rego" lang="ruby" >}}
 
 ```bash
 kubectl create configmap ingress-conflicts --from-file=ingress-conflicts.rego
