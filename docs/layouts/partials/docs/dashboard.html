@@ -47,13 +47,10 @@
     </div>
   </div>
 
-  <div class="dashboard-main">
+  <div class="dashboard-main is-scrollable">
     {{ partial "docs/navbar.html" . }}
-
-    <section class="is-scrollable">
-      {{ partial "docs/hero.html" . }}
-      {{ partial "docs/article.html" . }}
-    </section>
+    {{ partial "docs/hero.html" . }}
+    {{ partial "docs/article.html" . }}
   </div>
 
   <div class="dashboard-panel right is-small has-background-white-bis is-scrollable is-hidden-mobile">
