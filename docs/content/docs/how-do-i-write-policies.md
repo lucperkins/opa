@@ -1,6 +1,7 @@
 ---
 title: How Do I Write Policies?
 weight: 2
+toc: true
 ---
 
 OPA is purpose built for reasoning about information represented in structured

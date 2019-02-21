@@ -1,6 +1,7 @@
 ---
 title: REST API
 weight: 6
+toc: true
 ---
 
 This document is the authoritative specification of the OPA REST API.

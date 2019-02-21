@@ -1,6 +1,7 @@
 ---
 title: Language Reference
 weight: 4
+toc: true
 ---
 
 This document is the authoritative specification of the Rego policy language
