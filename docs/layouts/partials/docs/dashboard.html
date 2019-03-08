@@ -32,12 +32,11 @@
 
         {{ range $docs }}
         {{ $isThisPage    := eq .URL $pageUrl }}
-        {{ $isRestApiPage := eq .Title "REST API" }}
         <a class="docs-nav-item{{ if $isThisPage }} is-active{{ end }}" href="{{ .URL }}">
           {{ .Title }}
         </a>
         {{ if $isThisPage }}
-        <div class="toc{{ if $isRestApiPage }} rest-api{{ end }}">
+        <div class="toc">
           {{ .TableOfContents }}
         </div>
         {{ end }}

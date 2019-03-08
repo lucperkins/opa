@@ -1,6 +1,7 @@
 ---
 title: How Do I Test Policies?
 weight: 3
+restrictedtoc: true
 ---
 
 OPA gives you a high-level declarative language
