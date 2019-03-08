@@ -3,13 +3,13 @@ title: Introduction
 weight: 1
 ---
 
-A policy is a set of rules that governs the behavior of a service.
-Policy-enablement empowers users to read, write, and manage these rules without
-needing specialized development or operational expertise. When your users can
-implement policies without recompiling your source code, then your service is
-policy enabled.
+A [**policy**](#policy) is a set of rules that governs the behavior of a
+service. [**Policy enablement**](#policy-enablement) empowers users to read,
+write, and manage these rules without needing specialized development or
+operational expertise. When your users can implement policies without
+recompiling your source code, then your service is **policy enabled**.
 
-## What is Policy?
+## What is Policy? {#policy}
 
 All organizations have policies. Policies are essential to the long-term
 success of organizations because they encode important knowledge about how to
@@ -21,7 +21,7 @@ are written down or conventions that are unspoken but permeate an
 organization’s culture. Policies may also be enforced with application logic or
 statically configured at deploy time.
 
-## What is Policy Enablement?
+## What is Policy Enablement? {#policy-enablement}
 
 Policy-enabled services allow policies to be specified declaratively, updated
 at any time without recompiling or redeploying, and enforced automatically
