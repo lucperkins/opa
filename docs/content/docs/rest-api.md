@@ -1,7 +1,6 @@
 ---
 title: REST API
 weight: 6
-toc: true
 ---
 
 This document is the authoritative specification of the OPA REST API.
@@ -14,9 +13,10 @@ The identifiers given to policy modules are only used for management purposes. T
 
 ### List Policies
 
+```http
+GET /v1/policies HTTP/1.1
 ```
-GET /v1/policies
-```
+
 List policy modules.
 
 

@@ -1,3 +1,6 @@
+.dashboard-main
+  display: block
+
 .dashboard-panel-logo
   width: 50%
 
@@ -33,16 +36,6 @@
     background-color: $secondary
     height: 1px
 
-.toc
-  code
-    background-color: $grey-lighter
-
-  a
-    color: $dark
-
-    &:hover
-      color: $grey
-
 .figure
   img
     margin-bottom: .5rem
@@ -60,3 +53,17 @@
 
     +touch
       width: 100%
+
+.toc
+  margin: .5rem 0 1.25rem 1rem
+
+  a
+    color: $primary
+    font-size: .9rem
+
+  &.rest-api
+    a
+      color: $primary
+
+    ul li ul li ul li ul li
+      display: none

@@ -29,7 +29,7 @@ When OPA starts for the first time, it will not contain any policies or data. Po
 
 The primary unit of data in OPA is a document, which is similar to a JSON value. Documents typically correspond to single, self-contained objects and are capable of representing both primitive types (strings, numbers, booleans, and null) as well as structured types (objects, and arrays). Documents are created, read, updated, and deleted via OPA’s [RESTful HTTP APIs](../rest-api).
 
-{{< figure src="/img/data-model-dependencies.svg" width="70" caption="" >}}
+{{< figure src="/img/data-model-dependencies.svg" width="70" caption="OPA data model dependencies" >}}
 
 ### Base Documents
 
@@ -152,7 +152,7 @@ In contrast to base documents, virtual documents embody the results of evaluatin
 
 All documents pushed into OPA or computed by rules are nested under a built-in root document named data.
 
-![data model logical](/img/data-model-logical.svg "data model logical")
+{{< figure src="/img/data-model-logical.svg" width="70" caption="OPA document structure" >}}
 
 Example `data` document:
 
@@ -197,9 +197,9 @@ Example `input` document:
 
 ```json
 {
-    "method": "GET",
-    "path": "/servers/s2",
-    "user": "alice"
+  "method": "GET",
+  "path": "/servers/s2",
+  "user": "alice"
 }
 ```
 
@@ -488,7 +488,7 @@ policy. We can use OPA's API to query for just those servers.
 GET https://example.com/v1/data/opa/examples/violations HTTP/1.1
 ```
 
-…the response is the subset of the servers base document that use HTTP and are connected to a public network:
+...the response is the subset of the servers base document that use HTTP and are connected to a public network:
 
 ```http
 HTTP/1.1 200 OK

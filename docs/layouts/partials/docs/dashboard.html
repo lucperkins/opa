@@ -24,11 +24,23 @@
           {{ $docsHome.Name }}
         </a>
 
+        {{ if $isDocsHome }}
+        <div class="toc">
+          {{ .TableOfContents }}
+        </div>
+        {{ end }}
+
         {{ range $docs }}
-        {{ $isThisPage := eq .URL $pageUrl }}
+        {{ $isThisPage    := eq .URL $pageUrl }}
+        {{ $isRestApiPage := eq .Title "REST API" }}
         <a class="docs-nav-item{{ if $isThisPage }} is-active{{ end }}" href="{{ .URL }}">
           {{ .Title }}
         </a>
+        {{ if $isThisPage }}
+        <div class="toc{{ if $isRestApiPage }} rest-api{{ end }}">
+          {{ .TableOfContents }}
+        </div>
+        {{ end }}
         {{ end }}
 
         <hr class="docs-nav-hr" />
@@ -42,6 +54,11 @@
         <a class="docs-nav-item{{ if $isThisPage }} is-active{{ end }}" href="{{ .URL }}">
           {{ .Title }}
         </a>
+        {{ if $isThisPage }}
+        <div class="toc">
+          {{ .TableOfContents }}
+        </div>
+        {{ end }}
         {{ end }}
       </div>
     </div>
@@ -52,12 +69,4 @@
     {{ partial "docs/hero.html" . }}
     {{ partial "docs/article.html" . }}
   </div>
-
-  {{ if .Params.toc }}
-  <div class="dashboard-panel right is-small has-background-white-bis is-scrollable is-hidden-mobile">
-    <div class="toc">
-      {{ .TableOfContents }}
-    </div>
-  </div>
-  {{ end }}
 </div>

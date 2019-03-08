@@ -103,7 +103,7 @@ t { x = 42; y = 41; x > y }
 The formal syntax uses the semicolon character `;` to separate expressions. Rule
 bodies can separate expressions with newlines and omit the semicolon:
 
-```
+```ruby
 t2 {
     x = 42
     y = 41

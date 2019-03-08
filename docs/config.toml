@@ -4,6 +4,11 @@ languageCode = "en"
 disableKinds = ["taxonomy", "taxonomyTerm"]
 googleAnalytics = "UA-84550302-1"
 
+pygmentsCodeFences = true
+pygmentsUseClasses = false
+pygmentsStyle = "tango"
+pygmentsGuessSyntax = true
+
 [params]
 description = "Policy-based control for cloud native environments"
 tagline = "Empower your administrators with flexible, fine-grained control across your entire stack."
