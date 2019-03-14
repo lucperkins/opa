@@ -1,7 +1,7 @@
 setup:
 	yarn global add postcss-cli
 
-serve: setup
+serve:
 	hugo server \
 		--buildDrafts \
 		--buildFuture \
