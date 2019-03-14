@@ -2,7 +2,8 @@ module.exports = {
   plugins: {
       autoprefixer: {
           browsers: [
-              "last 3 versions"
+              "last 2 versions",
+              "ie 10"
           ]
       }
   },
