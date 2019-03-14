@@ -1,0 +1,25 @@
+=flex
+  display: flex
+
+=row
+  +flex
+  flex-direction: row
+
+=column
+  +flex
+  flex-direction: column
+
+.dashboard
+  +row
+  position: relative
+  overflow: hidden
+  height: 100vh
+
+  .is-scrollable
+    overflow-y: auto
+
+  &-panel
+    +column
+    flex: 0 0 20%
+
+  &-main
