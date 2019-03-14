@@ -20,11 +20,14 @@
 
   &-panel
     +column
-    padding-bottom: 3rem
+    padding-bottom: 4rem
     flex: 0 0 20%
 
     &-header
       margin: 2rem 20%
 
     &-content
-      margin: 0 2rem
+      +desktop
+        margin: 0 2rem
+      +touch
+        margin: 0 1rem

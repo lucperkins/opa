@@ -2,19 +2,30 @@
   overflow: hidden
 
   &-title
+    +desktop
+      font-size: 1.2rem
+      margin-bottom: .5rem
+    +touch
+      font-size: 1rem
+      margin-bottom: .4rem
+
     display: block
-    margin-bottom: .5rem
     text-transform: uppercase
-    font-size: 1.2rem
     color: $primary
     font-weight: 300
 
   &-item
-    margin-left: .5rem
+    +desktop
+      font-size: 1rem
+      margin-left: .5rem
+      line-height: 130%
+    +touch
+      font-size: .8rem
+      margin-left: .4rem
+      line-height: 110%
+
     display: block
-    line-height: 90%
     color: $primary
-    font-size: 1rem
     font-weight: 400
 
     &:hover
@@ -24,7 +35,10 @@
       color: $opa-blue
 
   &-item + &-item
-    margin-top: .8rem
+    +desktop
+      margin-top: .5rem
+    +touch
+      margin-top: .4rem
 
   &-hr
     background-color: $secondary
@@ -47,13 +61,3 @@
 
     +touch
       width: 100%
-
-.toc
-  margin: .5rem 0 1.25rem 1rem
-
-  a
-    color: $primary
-    font-size: .9rem
-
-  ul li ul li ul li
-    display: none
