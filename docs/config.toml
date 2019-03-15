@@ -36,23 +36,34 @@ title = "Learn more"
 [[menu.main]]
 name = "Documentation"
 url = "/docs"
+weight = 1
 
 [[menu.main]]
 name = "Tutorials"
 url = "/docs/get-started"
+weight = 2
+
+[[menu.main]]
+name = "Playground"
+url = "https://play.openpolicyagent.org"
+weight = 3
 
 [[menu.social]]
 name = "Medium"
 url = "https://twitter.com/openpolicyagent"
+weight = 1
 
 [[menu.social]]
 name = "Twitter"
 url = "https://twitter.com/openpolicyagent"
+weight = 2
 
 [[menu.social]]
 name = "Slack"
 url = "http://slack.openpolicyagent.org/"
+weight = 3
 
 [[menu.social]]
 name = "GitHub"
 url = "https://github.com/open-policy-agent/opa"
+weight = 4
