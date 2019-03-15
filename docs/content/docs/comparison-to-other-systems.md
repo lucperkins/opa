@@ -13,6 +13,7 @@ Policy Agent.
 Role-based access control (RBAC) is pervasive today for authorization.
 To use RBAC for authorization, you write down two different kinds of
 information.
+
 * Which users have which roles
 * Which roles have which permissions
 

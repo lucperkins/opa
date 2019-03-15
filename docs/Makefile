@@ -1,16 +1,13 @@
-setup:
-	yarn global add postcss-cli
-
 serve:
 	hugo server \
 		--buildDrafts \
 		--buildFuture \
 		--disableFastRender
 
-production-build: setup
+production-build:
 	hugo --minify
 
-preview-build: setup
+preview-build:
 	hugo \
 		--baseURL $(DEPLOY_PRIME_URL) \
 		--buildDrafts \
