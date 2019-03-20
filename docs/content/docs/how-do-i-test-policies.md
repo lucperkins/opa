@@ -1,5 +1,6 @@
 ---
 title: How Do I Test Policies?
+kind: documentation
 weight: 3
 restrictedtoc: true
 ---

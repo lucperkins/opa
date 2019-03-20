@@ -1,5 +1,6 @@
 ---
 title: Status
+kind: documentation
 weight: 9
 ---
 

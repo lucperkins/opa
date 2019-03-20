@@ -1,5 +1,6 @@
 ---
 title: Comparison to Other Systems
+kind: documentation
 weight: 15
 ---
 

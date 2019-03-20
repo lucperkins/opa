@@ -1,5 +1,6 @@
 ---
 title: How Does OPA Work?
+kind: documentation
 weight: 1
 ---
 

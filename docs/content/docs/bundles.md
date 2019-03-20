@@ -1,5 +1,6 @@
 ---
 title: Bundles
+kind: documentation
 weight: 8
 ---
 

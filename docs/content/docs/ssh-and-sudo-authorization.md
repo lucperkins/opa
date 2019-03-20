@@ -1,6 +1,6 @@
 ---
 title: SSH and sudo Authorization
-tutorial: true
+kind: tutorial
 weight: 4
 ---
 

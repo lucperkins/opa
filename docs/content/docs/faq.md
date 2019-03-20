@@ -1,5 +1,6 @@
 ---
 title: Frequently Asked Questions
+kind: documentation
 weight: 15
 ---
 

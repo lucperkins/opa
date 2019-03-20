@@ -1,6 +1,6 @@
 ---
 title: Docker Authorization
-tutorial: true
+kind: tutorial
 weight: 2
 ---
 

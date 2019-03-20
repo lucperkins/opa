@@ -1,6 +1,6 @@
 ---
 title: HTTP API Authorization
-tutorial: true
+kind: tutorial
 weight: 3
 ---
 

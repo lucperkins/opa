@@ -1,6 +1,6 @@
 ---
 title: Kafka Authorization
-tutorial: true
+kind: tutorial
 weight: 5
 ---
 

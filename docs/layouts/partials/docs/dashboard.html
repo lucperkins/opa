@@ -1,8 +1,9 @@
 {{ $home       := site.BaseURL }}
 {{ $docsHome   := .CurrentSection }}
 {{ $allDocs    := where site.RegularPages "Section" "docs" }}
-{{ $docs       := where $allDocs ".Params.tutorial" "ne" true }}
-{{ $tutorials  := where $allDocs ".Params.tutorial" true }}
+{{ $docs       := where $allDocs ".Params.kind" "eq" "documentation" }}
+{{ $tutorials  := where $allDocs ".Params.kind" "eq" "tutorial" }}
+{{ $bestPrac   := where $allDocs ".Params.kind" "eq" "best-practices" }}
 {{ $logo       := site.Params.logos.sidebar | relURL }}
 {{ $pageUrl    := .URL }}
 {{ $isDocsHome := eq .URL $docsHome.URL }}
@@ -51,6 +52,24 @@
         </span>
 
         {{ range $tutorials }}
+        {{ $isThisPage := eq .URL $pageUrl }}
+        <a class="docs-nav-item{{ if $isThisPage }} is-active{{ end }}" href="{{ .URL }}">
+          {{ .Title }}
+        </a>
+        {{ if $isThisPage }}
+        <div class="toc">
+          {{ .TableOfContents }}
+        </div>
+        {{ end }}
+        {{ end }}
+
+        <hr class="docs-nav-hr" />
+
+        <span class="docs-nav-title">
+          Best Practices
+        </span>
+
+        {{ range $bestPrac }}
         {{ $isThisPage := eq .URL $pageUrl }}
         <a class="docs-nav-item{{ if $isThisPage }} is-active{{ end }}" href="{{ .URL }}">
           {{ .Title }}

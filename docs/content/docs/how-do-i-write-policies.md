@@ -1,5 +1,6 @@
 ---
 title: How Do I Write Policies?
+kind: documentation
 weight: 2
 toc: true
 ---

@@ -1,5 +1,6 @@
 ---
 title: Configuration Reference
+kind: documentation
 weight: 5
 ---
 

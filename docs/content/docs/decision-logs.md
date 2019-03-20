@@ -1,5 +1,6 @@
 ---
 title: Decision Logs
+kind: documentation
 weight: 10
 ---
 

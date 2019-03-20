@@ -1,5 +1,6 @@
 ---
 title: Language Reference
+kind: documentation
 weight: 4
 toc: true
 ---

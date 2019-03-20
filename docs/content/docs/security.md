@@ -1,5 +1,6 @@
 ---
 title: Security
+kind: documentation
 weight: 13
 ---
 

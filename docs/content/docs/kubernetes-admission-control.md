@@ -1,6 +1,6 @@
 ---
 title: Kubernetes Admission Control
-tutorial: true
+kind: tutorial
 weight: 6
 ---
 

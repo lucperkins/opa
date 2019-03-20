@@ -1,5 +1,6 @@
 ---
 title: Discovery
+kind: documentation
 weight: 12
 ---
 

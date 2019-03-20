@@ -1,6 +1,6 @@
 ---
 title: Get started
-tutorial: true
+kind: tutorial
 weight: 1
 ---
 

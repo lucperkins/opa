@@ -1,6 +1,6 @@
 ---
 title: Terraform Testing
-tutorial: true
+kind: tutorial
 weight: 7
 ---
 

@@ -1,3 +1,4 @@
+{{ $isDoc := eq .Section "docs" }}
 <!DOCTYPE html>
 <html lang="{{ site.LanguageCode }}">
   <head>
@@ -12,6 +13,10 @@
   </head>
   <body>
     {{ block "main" . }}
+    {{ end }}
+
+    {{ if $isDoc }}
+    {{ partial "javascript.html" . }}
     {{ end }}
   </body>
 </html>

@@ -1,5 +1,6 @@
 ---
 title: Deployments
+kind: documentation
 weight: 7
 ---
 

@@ -1,4 +1,8 @@
-# Best Practices: Identity and User Attributes
+---
+title: "Best Practices: Identity and User Attributes"
+kind: best-practices
+weight: 1
+---
 
 A common question from OPA users is how to deal with identity and user attributes.  The first thing to keep in mind is that **OPA does not handle authentication**.  It does not help users prove they are who they say they are; it does not handle usernames and passwords, or issue TLS certificates.  OPA assumes you have authentication in place and helps you with the step after that: authorization and policy--controlling who can do what.
 

@@ -1,5 +1,6 @@
 ---
 title: Plugins (Experimental)
+kind: documentation
 weight: 14
 ---
 

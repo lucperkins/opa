@@ -1,6 +1,6 @@
 ---
 title: Ceph Authorization
-tutorial: true
+kind: tutorial
 weight: 8
 ---
 

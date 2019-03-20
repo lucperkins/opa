@@ -1,5 +1,6 @@
 ---
 title: Monitoring
+kind: documentation
 weight: 11
 ---
 
