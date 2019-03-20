@@ -80,7 +80,8 @@ tfjson tfplan.binary > tfplan.json
 ```
 
 Here is the expected contents of `tfplan.json`.
-```
+
+```json
 {
     "aws_autoscaling_group.my_asg": {
         "arn": "",
