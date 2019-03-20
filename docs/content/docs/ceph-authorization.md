@@ -963,7 +963,7 @@ As we saw earlier, the OPA spec contained a ConfigMap that defined the policy to
 
 **authz.rego**
 
-{%ace lang='python'%}
+```ruby
 package ceph.authz
 
 default allow = false
@@ -1011,7 +1011,7 @@ allow {
 is_user_in_bucket_location(user, bucket) {
     user_location[user] == bucket_location[bucket]
 }
-{%endace%}
+```
 
 **The above policy will restrict a user from accessing a bucket whose location does not match the user's location.**. The user's and bucket's location is hardcoded in the policy for simplicity and in the real-world can be fetched from external sources or pushed into OPA using it's REST API.
 
@@ -1025,7 +1025,7 @@ The below Python S3 access test script connects to the  `Ceph Object Store Gatew
 
 Save the test script as **s3test.py**:
 
-{%ace lang='python'%}
+```python
 #!/usr/bin/env python
 
 import sys
@@ -1116,7 +1116,7 @@ if __name__ == '__main__':
 
     if action == 'download_data':
         download_data(conn, user, bucket_name)
-{%endace%}
+```
 
 The script needs the following environment variables:
 

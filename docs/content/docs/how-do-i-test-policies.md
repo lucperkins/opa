@@ -471,6 +471,7 @@ roles = [
 
 # Example RBAC policy implementation.
 
+```ruby
 default allow = false
 
 allow {
@@ -491,7 +492,7 @@ role_has_permission[role_name] {
 	perm.resource = input.resource
 	perm.action = input.action
 }
-{%endace%}
+```
 
 ### Example: Display `ALL` profile results with `default` ordering criteria
 

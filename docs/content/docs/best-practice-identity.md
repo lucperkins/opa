@@ -1,5 +1,6 @@
 ---
 title: "Best Practices: Identity and User Attributes"
+navtitle: Identity and User Attributes
 kind: best-practices
 weight: 1
 ---

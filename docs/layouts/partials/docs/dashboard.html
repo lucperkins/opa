@@ -34,9 +34,10 @@
         {{ end }}
 
         {{ range $docs }}
-        {{ $isThisPage    := eq .URL $pageUrl }}
+        {{ $isThisPage := eq .URL $pageUrl }}
+        {{ $title      := cond (isset .Params "navtitle") (.Params.navtitle) .Title }}
         <a class="docs-nav-item{{ if $isThisPage }} is-active{{ end }}" href="{{ .URL }}">
-          {{ .Title }}
+          {{ $title }}
         </a>
         {{ if $isThisPage }}
         <div class="toc">
@@ -53,8 +54,9 @@
 
         {{ range $tutorials }}
         {{ $isThisPage := eq .URL $pageUrl }}
+        {{ $title      := cond (isset .Params "navtitle") (.Params.navtitle) .Title }}
         <a class="docs-nav-item{{ if $isThisPage }} is-active{{ end }}" href="{{ .URL }}">
-          {{ .Title }}
+          {{ $title }}
         </a>
         {{ if $isThisPage }}
         <div class="toc">
@@ -71,8 +73,9 @@
 
         {{ range $bestPrac }}
         {{ $isThisPage := eq .URL $pageUrl }}
+        {{ $title      := cond (isset .Params "navtitle") (.Params.navtitle) .Title }}
         <a class="docs-nav-item{{ if $isThisPage }} is-active{{ end }}" href="{{ .URL }}">
-          {{ .Title }}
+          {{ $title }}
         </a>
         {{ if $isThisPage }}
         <div class="toc">

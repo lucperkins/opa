@@ -1,5 +1,6 @@
 ---
 title: Plugins (Experimental)
+navtitle: Plugins
 kind: documentation
 weight: 14
 ---

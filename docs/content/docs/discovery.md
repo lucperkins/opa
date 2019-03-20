@@ -116,7 +116,7 @@ Below is a policy file which includes the bundle congfiguration.
 
 **example.rego**
 
-{%ace lang='python'%}
+```ruby
 package example
 
 discovery = {
@@ -134,7 +134,7 @@ region_bundle = {
   "US": "example/test1/p",
   "UK": "example/test2/p"
 }
-{%endace%}
+```
 
 The `bundle_name` variable in `line 5` of the above policy will be dynamically selected based on the value of the label `region`. So if an OPA was started with `region: "US"`, then the `bundle_name` will be `example/test1/p`.
 
