@@ -1,3 +1,5 @@
+$panel-header-logo-width: 40%
+
 =flex
   display: flex
 
@@ -24,7 +26,9 @@
     flex: 0 0 20%
 
     &-header
-      margin: 2rem 20%
+      &-logo
+        width: $panel-header-logo-width
+        margin: 2rem auto
 
     &-content
       +desktop
