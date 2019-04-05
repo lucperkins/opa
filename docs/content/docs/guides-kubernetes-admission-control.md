@@ -7,7 +7,7 @@ weight: 2
 
 In Kubernetes, Admission Controllers enforce semantic validation of objects during create, update, and delete operations. With OPA you can enforce custom policies on Kubernetes objects without recompiling or reconfiguring the Kubernetes API server or even Kubernetes Admission Controllers.
 
-This primer assumes you, the Kubernetes administrator, have already installed OPA as a validating admission controller on Kubernetes as described in the [Kubernetes Admission Control Tutorial](kubernetes-admission-control.md).  And now you are at the point where you want to write your own policies.
+This primer assumes you, the Kubernetes administrator, have already installed OPA as a validating admission controller on Kubernetes as described in the [Kubernetes Admission Control Tutorial](../kubernetes-admission-control).  And now you are at the point where you want to write your own policies.
 
 OPA was designed to write policies over arbitrary JSON/YAML.  It does NOT have built-in concepts like pods, deployments, or services.  OPA just sees the JSON/YAML sent by Kubernetes API server and allows you to write whatever policy you want to make a decision.  You as the policy-author know the semantics--what that JSON/YAML represents.
 
@@ -15,15 +15,16 @@ OPA was designed to write policies over arbitrary JSON/YAML.  It does NOT have b
 
 To get started, let's look at a common policy: ensure all images come from a trusted registry.
 
-```
-1: package kubernetes.admission
-2: deny[msg] {
-3:     input.request.kind.kind == "Pod"
-4:     image := input.request.object.spec.containers[_].image
-5:     not startswith(image, "hooli.com")
-6:     msg := sprintf("image fails to come from trusted registry: %v", [image])
-7: }
-```
+{{< line-numbers lang="ruby" >}}
+package kubernetes.admission
+deny[msg] {
+    input.request.kind.kind == "Pod"
+    image := input.request.object.spec.containers[_].image
+    not startswith(image, "hooli.com")
+    msg := sprintf("image fails to come from trusted registry: %v", [image])
+}
+{{< /line-numbers >}}
+
 **Policies and Packages**.
 In line 1 the `package kubernetes.admission` declaration gives the (hierarchical) name `kubernetes.admission` to the rules in the remainder of the policy.  The default installation of OPA as an admission controller assumes your rules are in the package `kubernetes.admission`.
 
@@ -33,7 +34,7 @@ In line 1 the `package kubernetes.admission` declaration gives the (hierarchical
 
 For example, suppose you tried to create the Pod below with nginx and mysql images.
 
-```
+```yaml
 kind: Pod
 apiVersion: v1
 metadata:
@@ -48,7 +49,7 @@ spec:
 
 `deny` evaluates to the following set of messages.
 
-```
+```json
 [
   "image fails to come from trusted registry: nginx",
   "image fails to come from trusted registry: mysql"
@@ -204,19 +205,19 @@ Builtins let you analyze and manipulate:
 ## Unit Testing Policies
 When you write policies, you should use the OPA unit-test framework *before* sending the policies out into the OPA that is running on your cluster.  The debugging process will be much quicker and effective.  Here's an example test for the policy from the last section.
 
-```
- 1: package kubernetes.test_admission
- 2: import data.kubernetes.admission
- 3:
- 4: test_image_safety {
- 5:   unsafe_image := {"request": {
- 6:       "kind": {"kind": "Pod"},
- 7:       "object": {"spec": {"containers": [
- 8:           {"image": "hooli.com/nginx"},
- 9:           {"image": "busybox"}]}}}}
-10:   count(admission.deny) == 1 with input as unsafe_image
-11: }
-```
+{{< line-numbers >}}
+package kubernetes.test_admission
+import data.kubernetes.admission
+
+test_image_safety {
+    unsafe_image := {"request": {
+    "kind": {"kind": "Pod"},
+    "object": {"spec": {"containers": [
+        {"image": "hooli.com/nginx"},
+        {"image": "busybox"}]}}}}
+    count(admission.deny) == 1 with input as unsafe_image
+}
+{{< /line-numbers >}}
 
 **Different Package**. On line 1 the `package` directive puts these tests in a different package than admission control policy itself.  This is the recommended best practice.
 
@@ -269,16 +270,17 @@ request:
 
 To avoid conflicting ingresses, you write a policy like the one that follows.
 
-```
-1: package kubernetes.admission
-2: deny[msg] {
-3:     input.request.kind.kind == "Ingress"
-4:     newhost := input.request.object.spec.rules[_].host
-5:     oldhost := data.kubernetes.ingresses[namespace][name].spec.rules[_].host
-6:     newhost == oldhost
-7:     msg := sprintf("ingress host conflicts with ingress %v/%v", [namespace, name])
-8: }
-```
+{{< line-numbers lang="ruby" >}}
+package kubernetes.admission
+deny[msg] {
+    input.request.kind.kind == "Ingress"
+    newhost := input.request.object.spec.rules[_].host
+    oldhost := data.kubernetes.ingresses[namespace][name].spec.rules[_].host
+    newhost == oldhost
+    msg := sprintf("ingress host conflicts with ingress %v/%v", [namespace, name])
+}
+{{< /line-numbers >}}
+
 The first part of the rule you already understand:
 * Line (3) checks if the `input` is an Ingress
 * Line (4) iterates over all the rules in the `input` ingress and looks up the `host` field for each of its rules.
