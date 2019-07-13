@@ -176,6 +176,9 @@ var DefaultBuiltins = [...]*Builtin{
 	// Glob
 	GlobMatch,
 	GlobQuoteMeta,
+
+	// Byte calculations
+	NumBytes,
 }
 
 // BuiltinMap provides a convenient mapping of built-in names to
@@ -1342,6 +1345,17 @@ var GlobMatch = &Builtin{
 			types.S,
 		),
 		types.B,
+	),
+}
+
+// NumBytes converts strings like 10GB, 5K, 4mb, and the like into an integer number of bytes.
+var NumBytes = &Builtin{
+	Name: "numbytes",
+	Decl: types.NewFunction(
+		types.Args(
+			types.S,
+		),
+		types.N,
 	),
 }
 
